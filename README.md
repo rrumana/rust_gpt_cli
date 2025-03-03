@@ -1,7 +1,7 @@
 # rust_gpt_cli
-A CLI tool to interface with the ChatGPT API from the command line.
+A CLI tool to interface with the ChatGPT API from the command line. The biggest advantage of this program as opposed to some others is it allows you to have continuous and coherent conversations with a model of your choosing. 
 
-I built this to be able to use ChatGPT from my preffered CLI. It allows you to have relatively coherent conversations for about 20-30 mesages before the the context window gets a little screw-y. All that is needed is an OpenAI API Key and you're off to the races. A short Demo and better instructions on the way.
+By default the app can do about 20-30 messages before larger details start falling out of the context window. This can be tweaked in the code by simply increasing the number of messages saved. Just be aware that increasing this number increases token consumption, and therefore cost.
 
 ## Installation
 
