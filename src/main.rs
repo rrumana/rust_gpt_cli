@@ -1,5 +1,3 @@
-// main.rs
-
 use clap::Parser;
 use chrono::Utc;
 use reqwest::header::{CONTENT_TYPE, AUTHORIZATION};
@@ -11,8 +9,8 @@ use tokio::io::{self, AsyncBufReadExt, BufReader};
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    /// The model to use for the conversation (default: gpt-3.5-turbo)
-    #[arg(short, long, default_value = "gpt-3.5-turbo")]
+    /// The model to use for the conversation (default: gpt-4o).
+    #[arg(short, long, default_value = "gpt-4o")]
     model: String,
     /// Enable debug mode to generate additional files for testing.
     #[arg(short, long, action)]
@@ -212,7 +210,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                             }
                         }
                     },
-                    None => break,
+                    _ => break,
                 }
             },
             _ = tokio::signal::ctrl_c() => {
@@ -234,9 +232,11 @@ async fn main() -> Result<(), Box<dyn Error>> {
         if let Err(e) = save_debug_files(&conversation, &summary) {
             eprintln!("Final debug file error: {}", e);
         } else {
-            println!("Debug files 'chat_transcription.txt' and generated. Press enter to continue");
+            println!("Debug files 'chat_transcription.txt' and generated.");
         }
     }
+
+    println!("Session ended. Press enter to exit.");
 
     Ok(())
 }
