@@ -49,3 +49,10 @@ Think really hard about this... how many rs are in the word strawberry?
 03-mini: The word "strawberry" contains three 'r's.
 ```
 
+## Updates
+
+- More will be on the way shortly, I am currently thinking of adding more features like:
+  - Having conversation be started with arbitrary context
+  - Adding support for other APIs
+
+- When I decide what to do I will post it here
